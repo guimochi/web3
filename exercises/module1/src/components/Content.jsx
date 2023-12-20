@@ -1,4 +1,4 @@
-import { Part } from "components/Part";
+import { Part } from 'components/Part';
 
 export const Content = (props) => {
   return props.parts.map((part) => {
