@@ -1,3 +1,12 @@
-const Button = (props) => <button onClick={props.onClick}>{props.text}</button>;
+const Button = ({ delta, changeCount, text }) => {
+	const handleClick = (e) => {
+		changeCount(e.target.dataset.delta);
+	};
+	return (
+		<button data-delta={delta} onClick={handleClick}>
+			{text}
+		</button>
+	);
+};
 
 export default Button;
