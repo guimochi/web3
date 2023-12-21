@@ -3,14 +3,14 @@ import Button from 'components/Button/Button';
 import useLocalStorage from 'hooks/useLocalStorage';
 
 const App = () => {
-	const [counter, setCounter] = useLocalStorage('counter', 0);
+	const [count, setCount] = useLocalStorage('counter', 0);
 
 	return (
 		<>
-			<Display counter={counter} />
-			<Button changeCount={setCounter} delta={1} text='plus' />
-			<Button delta={-counter} changeCount={setCounter} text='reset' />
-			<Button delta={-1} changeCount={setCounter} text='minus' />
+			<Display counter={count} />
+			<Button changeCount={setCount} delta={1} text='plus' />
+			<Button delta={-count} changeCount={setCount} text='reset' />
+			<Button delta={-1} changeCount={setCount} text='minus' />
 		</>
 	);
 };
