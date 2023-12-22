@@ -1,10 +1,9 @@
-import { useState } from 'react';
-import Person from 'components/Person/Person';
-import Persons from 'components/Persons/Persons';
-import Header from '../Header/Header';
 import Filter from 'components/Filter/Filter';
+import Persons from 'components/Persons/Persons';
+import { useState } from 'react';
+import Header from '../Header/Header';
 import PersonForm from '../PersonForm/PersonForm';
-let id = 4;
+
 const App = () => {
 	const [persons, setPersons] = useState([
 		{ name: 'Arto Hellas', number: '040-123456', id: 1 },
@@ -16,19 +15,6 @@ const App = () => {
 	const [newNumber, setNewNumber] = useState('');
 	const [filter, setFilter] = useState('');
 
-	const handleNameChange = (e) => setNewName(e.target.value);
-	const handleNumberChange = (e) => setNewNumber(e.target.value);
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		if (persons.find((person) => person.name === newName)) {
-			alert('NO NO NO');
-			return;
-		}
-		id++;
-		setPersons(persons.concat({ id: id, name: newName, number: newNumber }));
-		setNewName('');
-		setNewNumber('');
-	};
 	return (
 		<div>
 			<Header text='Phonebook' />
